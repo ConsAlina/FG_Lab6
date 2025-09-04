@@ -1,0 +1,24 @@
+<div *ngIf="product" class="container text-center my-5">
+  <h2 class="mb-2">{{ product.name }}</h2>
+
+  <strong>Location:</strong> 
+  <p class="text-muted mb-4">{{ product.location }}</p>
+
+  <strong>Details:</strong>
+  <p class="lead">
+    <strong>Available {{ product.name }}</strong>
+  </p>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-sm-6 mb-4" *ngFor="let model of product.models">
+      <div class="card shadow-sm h-100 text-center">
+        <div class="card-body d-flex flex-column justify-content-center">
+          <h5 class="card-title">{{ model.brand }}</h5>
+          <p class="card-text">Price: ₱{{ model.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="btn btn-success mt-3" routerLink="/products">Go Back</a>
+</div>
